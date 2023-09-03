@@ -2,7 +2,130 @@
 @use '../base/mixins' as m;
 
 
-// --------------- HOME
+// --------------- FORM
+
+.date{
+    &__title{
+        font-size: 3rem;
+        font-weight: 800;
+        text-align: center;
+        margin-top: 3rem;
+    }
+
+    &__color{
+        color: rgb(123, 78, 165);
+    }
+
+    &__container{
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    gap:0.5rem;
+    justify-items: center;
+    padding: 1rem
+    }
+
+    &__managment{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    &__subtitle{
+      font-size: 2em;
+        font-weight: 800;
+        text-align: center;
+        width: max-content;
+    }
+    &__details{
+      font-size: 1.5rem;
+        font-weight: 600;
+        text-align: center;
+        width: max-content;
+        margin-bottom: 2rem;
+    }
+
+    &__form{
+        background: white;
+        width: 100%;
+        border-radius: 0.5rem;
+        padding: 3rem;
+    }
+
+    &__field{
+      margin-bottom: 2rem;
+    }
+
+    &__label{
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1.2em;
+        margin-bottom: 0.5rem;
+
+    }
+
+    &__input{
+        font-size: 1.2em;
+        padding: 0.8rem;
+        border: solid rgb(230, 184, 232);
+        border-radius: 0.5rem;
+        width: 100%;
+    }
+
+    &__submit{
+       width: 100%; 
+       padding: 1rem;
+       border-radius: 0.3rem;
+       text-transform: uppercase;
+       text-align: center;
+       color: aliceblue;
+       background: rgb(123, 78, 165);
+       font-weight: 700;
+       font-size: 1.5em;
+       cursor: pointer;
+       transition: all ease-in-out 0.3s;
+    }
+
+    &__submit:hover{
+        background: rgb(78, 49, 104);
+    }
+
+    &__register{
+        width: 100%;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+    }
+
+    &__date{
+         background: white;
+        width: 100%;
+        border-radius: 0.5rem;
+        padding: 3rem; 
+        margin-bottom: 0.5rem;
+    }
+
+    &__content{
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    &__result{
+        font-weight: 500;
+    }
+    
+    .no-margin{
+        margin-bottom: 0;
+    }
+
+     &__date--container{
+         overflow-y: scroll;
+         max-height: 75vh;
+     }
+
+
+}
 
 
 
@@ -12,7 +135,17 @@
 
 @include m.tablet {}
 
-@include m.movil {}
+@include m.movil {
+.date{
+&__container {
+        grid-template-columns: 1fr;
+        padding: 0;
+
+    }
+}
+
+
+}
 
 
 

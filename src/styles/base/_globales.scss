@@ -2,7 +2,7 @@
 @use '../base/mixins' as m;
 
 body{
-    //background: v.$interaction;
+    background: #f9f1f9;
     overflow-x: hidden;
 }
 
@@ -24,7 +24,7 @@ p{
 
 
 h2{
- font-size: 5rem;
+
 }
 
 h3{
@@ -70,39 +70,23 @@ h4{
         }
 
          p {
-             font-size: 1em;
-             line-height: 1.8rem;
+           
          }
     
          h2 {
-             font-size: 3.8em;
-             line-height: 0.9em;
-             letter-spacing: 0.02em;     
-             font-weight: 600;
-             margin-top: 3rem;
+          
 
          }
     
          h3 {
-             font-size: 3em;
-             line-height: 0.9em;
-             letter-spacing: 0.02em;
-             font-weight: 200;
-             margin-top: 0.5rem;
+         
          }
     
          h4 {
-             font-size: 1.5em;
-             letter-spacing: 0.02em;
-             font-weight: 500;
-             margin-bottom: 1.5rem;
+         
          }
     
          span {
-             font-size: 0.9em;
-             line-height: 0.9em;
-             letter-spacing: 0.02em;
-             font-weight: 400;
-             margin-top: 0.5rem;
+           
          }    
  }
