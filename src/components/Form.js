@@ -1,19 +1,29 @@
+import { useState } from "react";
 
 
 const Form = () => {
 
+  const [nombre, setNombre] = useState('')
+
+  const handleonSubmit = (e) => {
+    e.preventDefault()
+    console.log('enviado form')
+  }
+
   return (
     <>
-      <form className="date__form">
+      <form onSubmit={handleonSubmit} className="date__form">
         <div className="date__field">
           <label htmlFor="pet" className="date__label">
-            Nombre Mascota
+            Nombre Mascota {nombre}
           </label>
           <input
             id="pet"
             className="date__input"
             type="text"
             placeholder="Nombre de la mascota"
+            value={nombre}
+            onChange={(e) => setNombre(e.target.value)}
           />
         </div>
         <div className="date__field">
