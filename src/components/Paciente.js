@@ -1,34 +1,49 @@
+const Paciente = ({  pacientes, setPaciente, eliminarPaciente }) => {
 
-const Paciente = () => {
+  const handlerEliminar = (id) => {
+    // eslint-disable-next-line no-restricted-globals
+    const respuesta = confirm("Deseas eliminar este paciente?");
+
+    if (respuesta) {
+      eliminarPaciente(id);
+    }
+  }
+
   return (
-    <>     
-        <div className="date__date">
-          <p className="date__content">
-            Nombre:{""} {""}
-            <span className="date__result">George Michael</span>
-          </p>
-          <p className="date__content">
-            Propietario:{""} {""}
-            <span className="date__result">George Michael</span>
-          </p>
-          <p className="date__content">
-            Email:{""} {""}
-            <span className="date__result">George Michael</span>
-          </p>
-          <p className="date__content no-margin">
-            Sintomas:{""} {""}
-            <span className="date__result">
-              Es un hecho establecido hace demasiado tiempo que un lector se
-              distraerá con el contenido del texto de un sitio mientras que mira
-              su diseño. El punto de usar Lorem Ipsum es que tiene una
-              distribución más o menos normal de las letras, al contrario de
-              usar textos como por ejemplo "Contenido aquí, contenido aquí".
-              Estos textos hacen parecerlo
-            </span>
-          </p>
-        </div>
+    <>
+      {pacientes.map((paciente) => {
+        return (
+          <div key={paciente.id} className="date__date">
+            <p className="date__content">
+              Nombre:{""} {""}
+              <span className="date__result">{paciente.nombre}</span>
+            </p>
+            <p className="date__content">
+              Propietario:{""} {""}
+              <span className="date__result">{paciente.propietario}</span>
+            </p>
+            <p className="date__content">
+              Email:{""} {""}
+              <span className="date__result">{paciente.email}</span>
+            </p>
+            <p className="date__content no-margin">
+              Sintomas:{""} {""}
+              <span className="date__result">{paciente.sintomas}</span>
+            </p>
+
+            <div className="date__buttons">
+              <button onClick={()=> setPaciente(paciente)} className="date__btn" type="button">
+                editar
+              </button>
+              <button onClick={() => handlerEliminar(paciente.id)} className="date__btn date__btn--borrar" type="button">
+                borrar
+              </button>
+            </div>
+          </div>
+        );
+      })}
     </>
   );
-}
+};
 
-export default Paciente
+export default Paciente;

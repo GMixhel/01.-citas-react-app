@@ -45,6 +45,17 @@
         margin-bottom: 2rem;
     }
 
+    &__error{
+        width: 100%;
+        text-align: center;
+        background: rgb(125, 61, 61);
+        color: azure;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        font-weight: 700;
+        border-radius: 0.5rem;
+    }
+
     &__form{
         background: white;
         width: 100%;
@@ -122,6 +133,32 @@
      &__date--container{
          overflow-y: scroll;
          max-height: 75vh;
+     }
+
+     &__buttons{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+     }
+
+     &__btn{
+        text-transform: uppercase;
+        background: #6b78ee;
+        color: azure;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-top: 2rem;
+        cursor: pointer;
+        transition:all ease-in-out 0.2s;
+     }
+
+     &__btn--borrar{
+        background: #ee6b6b;
+     }
+
+
+     &__btn:hover{
+        filter: contrast(10);
      }
 
 
