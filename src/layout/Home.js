@@ -4,21 +4,13 @@ import Form  from '../components/Form';
 
 
 const Home = () => {
-  const [pacientes, setPacientes] = useState([]);
+  const [pacientes, setPacientes] = useState(
+    JSON.parse(localStorage.getItem("pacientes")) ?? []
+  );
   const [paciente, setPaciente] = useState({});
 
   useEffect(() => {
-    const obtenerLS = () => {
-      const pacienteLS = JSON.parse(localStorage.getItem("pacientes")) ?? [];
-      console.log(pacienteLS)
-    }
-
-    obtenerLS()
-  }, []);
-
-
-  useEffect(() => {
-    localStorage.setItem('pacientes', JSON.stringify(pacientes))
+    localStorage.setItem('pacientes', JSON.stringify( pacientes))
   }, [pacientes])
   
 
